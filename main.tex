@@ -1,0 +1,82 @@
+\documentclass{theme/borgar}
+
+% Filler text
+\usepackage{lipsum}
+
+% Footer and header
+\usepackage{fancyhdr}
+
+% Language package
+\usepackage[utf8]{inputenc}
+\usepackage[english,swedish]{babel}
+
+% Git commit data
+\input{.git.tex}
+
+% Front page data
+\title{<Title>}
+\subtitle{<Subtitle>}
+\author{<Author>}
+\supervisor{<Supervisor>}
+\semester{<Semester>}
+
+% Header and footer
+	\pagestyle{fancy}
+	% Clear headers and footers
+	\fancyhead{}
+	\fancyfoot{}
+	% Remove line in the header
+	\renewcommand{\headrulewidth}{0pt}
+	% Draft, header
+	\fancyhead[C]{--- Draft ---}
+	% Pagenumber, footer
+	\fancyfoot[C]{\thepage}
+	% Git commit data, footer
+	\fancyfoot[R]{{\tiny Rev: \git}}
+
+\begin{document}
+
+	% Set main language
+	\selectlanguage{swedish}
+
+	% Frontpage
+	\maketitle
+
+	% Select English as language before the Abstract
+	\selectlanguage{english}
+
+	\begin{abstract}
+		\lipsum[1-2]
+	\end{abstract}
+
+	% Return to Swedish as language
+	\selectlanguage{swedish}
+
+	\begin{flushleft}
+		{\small {\bf Nyckelord:} keyword A, keyword B,...}
+	\end{flushleft}
+
+	\tableofcontents
+
+	\clearpage
+
+	\section{Introduktion}
+
+	\subsection{Bakgrund}
+	Write text here
+	\subsection{Syfte}
+		\lipsum[1-2]
+	\subsection{Frågeställningar}
+		\lipsum[1-2]
+	\subsection{Metod}
+		\lipsum[1-2]
+	\subsection{Material}
+		\lipsum[1-2]
+	\subsection{Avgränsningar}
+		\lipsum[1-2]
+	\subsection{Disposition}
+		\lipsum[1-2]
+	\subsection{Material}
+		\lipsum[1-2]
+
+\end{document}
